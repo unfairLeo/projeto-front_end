@@ -1,0 +1,23 @@
+<!--
+  item-list.component.html
+  ---------------------------------------------------------------------------
+  Lista de agendamentos da barbearia.
+-->
+
+<section class="list panel">
+  <div class="list-header">
+    <h2>Agendamentos</h2>
+    <span class="badge">{{ registros.length }} item(ns)</span>
+  </div>
+
+  <div class="cards">
+    @for (registro of registros; track registro.id) {
+      <app-item-card
+        [registro]="registro"
+        (editar)="editar.emit($event)"
+        (excluir)="excluir.emit($event)"
+        (alternarStatus)="alternarStatus.emit($event)"
+      ></app-item-card>
+    }
+  </div>
+</section>

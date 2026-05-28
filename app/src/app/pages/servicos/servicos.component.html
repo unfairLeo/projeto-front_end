@@ -1,0 +1,15 @@
+<section class="container servicos-page">
+  <h1 class="page-title">Serviços da Barbearia</h1>
+  <p class="page-subtitle">
+    Catálogo de serviços com preço, descrição e popularidade para facilitar a escolha do cliente.
+  </p>
+
+  @if (servicos.length > 0) {
+    <app-lista-servicos [servicos]="servicos"></app-lista-servicos>
+  } @else {
+    <app-empty-state
+      titulo="Sem serviços cadastrados"
+      mensagem="Adicione serviços para exibição nesta página."
+    ></app-empty-state>
+  }
+</section>

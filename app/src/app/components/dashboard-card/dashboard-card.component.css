@@ -1,0 +1,67 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.card-value {
+  display: block;
+  font-size: 32px;
+  margin: 8px 0;
+  letter-spacing: -0.5px;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.card-servicos::after {
+  background: linear-gradient(130deg, #f59e0b, #fb923c);
+}
+
+.card-agendamentos::after {
+  background: linear-gradient(130deg, #3b82f6, #38bdf8);
+}
+
+.card-faturamento::after {
+  background: linear-gradient(130deg, #16a34a, #22c55e);
+}
+
+.card-clientes::after {
+  background: linear-gradient(130deg, #7c3aed, #a855f7);
+}

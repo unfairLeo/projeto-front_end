@@ -1,0 +1,36 @@
+<section class="container visagismo-page">
+  <h1 class="page-title">Consulta de Visagismo</h1>
+  <p class="page-subtitle">
+    Selecione formato de rosto e tipo de cabelo para receber recomendações de corte.
+  </p>
+
+  <form class="panel visagismo-form" (ngSubmit)="consultar()">
+    <div class="form-field">
+      <label for="rosto">Tipo de rosto</label>
+      <select id="rosto" name="rosto" [(ngModel)]="rosto">
+        <option>Oval</option>
+        <option>Redondo</option>
+        <option>Quadrado</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="cabelo">Tipo de cabelo</label>
+      <select id="cabelo" name="cabelo" [(ngModel)]="cabelo">
+        <option>Liso</option>
+        <option>Cacheado</option>
+      </select>
+    </div>
+
+    <button class="btn" type="submit">Consultar recomendação</button>
+  </form>
+
+  <section class="panel">
+    <h2>Recomendações</h2>
+    <ul>
+      @for (item of recomendacoes; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </section>
+</section>

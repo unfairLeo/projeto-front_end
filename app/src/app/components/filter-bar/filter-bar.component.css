@@ -1,0 +1,18 @@
+.filter-bar {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  align-items: end;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .filter-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+}

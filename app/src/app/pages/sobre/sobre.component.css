@@ -1,0 +1,16 @@
+.content {
+  line-height: 1.7;
+}
+
+h2 {
+  margin: 18px 0 8px;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+p,
+li {
+  color: var(--muted);
+}

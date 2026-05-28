@@ -1,0 +1,10 @@
+<!--
+  @if mostra a mensagem apenas quando a condição é verdadeira.
+-->
+@if (carregando) {
+  <p class="feedback loading">Carregando registros...</p>
+}
+
+@if (erro) {
+  <p class="feedback error">{{ erro }}</p>
+}

@@ -1,0 +1,5 @@
+<section class="lista-servicos">
+  @for (servico of servicos; track servico.id) {
+    <app-card-servico [servico]="servico"></app-card-servico>
+  }
+</section>

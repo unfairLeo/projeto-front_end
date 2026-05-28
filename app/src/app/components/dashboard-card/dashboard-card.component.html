@@ -1,0 +1,12 @@
+<!--
+  Card simples de indicador.
+  Todos os valores exibidos aqui chegam do componente pai por @Input.
+-->
+<section class="card" [class]="'card card-' + destaque">
+  <div class="card-top">
+    <span class="icon" aria-hidden="true">{{ icone }}</span>
+    <span class="card-title">{{ titulo }}</span>
+  </div>
+  <strong class="card-value">{{ valor }}</strong>
+  <p>{{ descricao }}</p>
+</section>

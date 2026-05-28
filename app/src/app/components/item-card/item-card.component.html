@@ -1,0 +1,39 @@
+<article class="item-card">
+  <div class="item-main">
+    <div>
+      <h3>{{ registro.cliente }}</h3>
+      <p>{{ registro.servico }} - {{ registro.profissional }}</p>
+    </div>
+
+    <span [class]="'badge ' + classeStatus()">
+      {{ registro.status }}
+    </span>
+  </div>
+
+  <dl class="meta">
+    <div>
+      <dt>Telefone</dt>
+      <dd>{{ registro.telefone }}</dd>
+    </div>
+    <div>
+      <dt>Data/Hora</dt>
+      <dd>{{ registro.dataHora | date:'dd/MM/yyyy HH:mm' }}</dd>
+    </div>
+    <div>
+      <dt>Valor</dt>
+      <dd>{{ registro.valor | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</dd>
+    </div>
+  </dl>
+
+  <div class="actions">
+    <button type="button" class="btn secondary" (click)="alternarStatus.emit(registro.id)">
+      Alterar status
+    </button>
+    <button type="button" class="btn secondary" (click)="editar.emit(registro)">
+      Editar
+    </button>
+    <button type="button" class="btn danger" (click)="excluir.emit(registro.id)">
+      Excluir
+    </button>
+  </div>
+</article>

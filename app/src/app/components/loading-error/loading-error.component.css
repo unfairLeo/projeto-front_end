@@ -1,0 +1,15 @@
+.status {
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+}
+
+.loading {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+}

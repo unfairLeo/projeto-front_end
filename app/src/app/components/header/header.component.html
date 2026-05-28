@@ -1,0 +1,32 @@
+<!--
+  header.component.html
+  ---------------------------------------------------------------------------
+  Template do cabeçalho da aplicação.
+
+  Este componente mostra:
+  - nome do sistema;
+  - subtítulo curto;
+  - links de navegação para as rotas principais.
+-->
+
+<header class="topbar">
+  <div class="container topbar-content">
+    <div class="brand-wrap">
+      <img class="brand-logo" src="/assets/logo.png" alt="Logo Caveira Nobre" />
+      <!--
+        Interpolação:
+        {{ titulo }} exibe no HTML o valor recebido pelo @Input titulo.
+      -->
+      <strong class="brand">{{ titulo }}</strong>
+      <!-- <span class="tagline">Projeto base para aulas de Front-End</span> -->
+    </div>
+
+    <nav class="menu" aria-label="Menu principal">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/servicos" routerLinkActive="active">Serviços</a>
+      <a routerLink="/registros" routerLinkActive="active">Agendamentos</a>
+      <a routerLink="/visagismo" routerLinkActive="active">Visagismo</a>
+      <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
+    </nav>
+  </div>
+</header>

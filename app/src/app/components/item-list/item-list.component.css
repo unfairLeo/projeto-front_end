@@ -1,0 +1,29 @@
+/*
+  Estilos específicos da lista de registros.
+  O objetivo não é criar um layout complexo, mas mostrar uma organização visual
+  fácil de adaptar para os trabalhos.
+*/
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list-header,
+{
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  gap: 14px;
+}

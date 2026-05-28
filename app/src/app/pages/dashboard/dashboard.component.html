@@ -1,0 +1,74 @@
+<!--
+  dashboard.component.html
+  ---------------------------------------------------------------------------
+  Dashboard da barbearia com indicadores de agendamentos.
+-->
+
+<section class="container">
+  <img src="/assets/logo.png" id="cav_nav" alt="Logo da barbearia">
+  <h1 class="page-title">Painel da Barbearia</h1>
+  <p class="page-subtitle">
+    Visual moderno com os números mais importantes para o dia a dia do salão.
+  </p>
+
+  <div class="grid-cards">
+    <app-dashboard-card
+      titulo="Serviços realizados"
+      icone="✂️"
+      destaque="servicos"
+      [valor]="resumo.concluidos"
+      descricao="Serviços finalizados com sucesso."
+    ></app-dashboard-card>
+
+    <app-dashboard-card
+      titulo="Agendamentos ativos"
+      icone="📅"
+      destaque="agendamentos"
+      [valor]="resumo.confirmados + resumo.pendentes"
+      descricao="Somando pendentes e confirmados."
+    ></app-dashboard-card>
+
+    <app-dashboard-card
+      titulo="Faturamento total"
+      icone="💰"
+      destaque="faturamento"
+      [valor]="valorFormatado()"
+      descricao="Receita acumulada dos agendamentos."
+    ></app-dashboard-card>
+
+    <app-dashboard-card
+      titulo="Ticket médio"
+      icone="💈"
+      destaque="clientes"
+      [valor]="ticketMedioFormatado()"
+      descricao="Valor médio por atendimento."
+    ></app-dashboard-card>
+  </div>
+
+  <section class="panel explanation">
+    <h2>Visão rápida do negócio</h2>
+    <p>
+      A área de agendamentos continua com cadastro, edição, remoção e filtros. No painel, deixamos apenas
+      os principais indicadores para consulta rápida da rotina da barbearia.
+    </p>
+  </section>
+
+  <section class="panel mini-kpis">
+    <article>
+      <span class="mini-label">Confirmados</span>
+      <strong>{{ resumo.confirmados }}</strong>
+    </article>
+    <article>
+      <span class="mini-label">Pendentes</span>
+      <strong>{{ resumo.pendentes }}</strong>
+    </article>
+    <article>
+      <span class="mini-label">Cancelados</span>
+      <strong>{{ resumo.cancelados }}</strong>
+    </article>
+    <article>
+      <span class="mini-label">Total de clientes</span>
+      <strong>{{ resumo.total }}</strong>
+    </article>
+  </section>
+</section>

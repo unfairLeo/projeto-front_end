@@ -1,0 +1,29 @@
+<!--
+  app.component.html
+  ---------------------------------------------------------------------------
+  Template do componente raiz.
+
+  Este arquivo mostra a estrutura principal da aplicação:
+  1. um cabeçalho fixo com navegação;
+  2. uma área principal onde as páginas serão trocadas pelas rotas.
+-->
+
+<!--
+  app-header é um componente filho.
+
+  [titulo]="titulo" é property binding:
+  - o lado esquerdo [titulo] é o @Input do HeaderComponent;
+  - o lado direito "titulo" é a propriedade do AppComponent.
+-->
+<app-header [titulo]="titulo"></app-header>
+
+<main class="app-main">
+  <!--
+    router-outlet é o ponto em que as páginas aparecem.
+
+    Quando a URL for /dashboard, o Angular coloca aqui o DashboardComponent.
+    Quando a URL for /registros, o Angular coloca aqui o RegistrosComponent.
+    Quando a URL for /sobre, o Angular coloca aqui o SobreComponent.
+  -->
+  <router-outlet></router-outlet>
+</main>

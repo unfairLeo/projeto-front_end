@@ -1,0 +1,31 @@
+.visagismo-page {
+  display: grid;
+  gap: 16px;
+}
+
+.visagismo-form {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.visagismo-form .btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+h2,
+ul {
+  margin: 0;
+}
+
+ul {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .visagismo-form {
+    grid-template-columns: 1fr;
+  }
+}

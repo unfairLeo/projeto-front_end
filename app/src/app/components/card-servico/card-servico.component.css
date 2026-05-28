@@ -1,0 +1,25 @@
+.card-servico {
+  display: grid;
+  gap: 12px;
+}
+
+.card-servico-topo,
+.card-servico-rodape {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+p {
+  color: var(--muted);
+}
+
+strong {
+  font-size: 22px;
+}

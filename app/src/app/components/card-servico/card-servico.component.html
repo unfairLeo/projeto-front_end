@@ -1,0 +1,11 @@
+<article class="panel card-servico">
+  <div class="card-servico-topo">
+    <h3>{{ servico.nome }}</h3>
+    <span class="badge">Popularidade {{ servico.popularidade }}/5</span>
+  </div>
+  <p>{{ servico.descricao }}</p>
+  <div class="card-servico-rodape">
+    <span class="badge">{{ servico.categoria }}</span>
+    <strong>{{ servico.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</strong>
+  </div>
+</article>

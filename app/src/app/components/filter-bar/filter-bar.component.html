@@ -1,0 +1,65 @@
+<!--
+  filter-bar.component.html
+  ---------------------------------------------------------------------------
+  Campos de filtro da lista.
+
+  Este componente mostra exemplos importantes de Angular:
+  - [(ngModel)] para ligar campo e variável;
+  - (input), (change) e (click) para capturar eventos;
+  - @for para gerar opções dinamicamente.
+-->
+
+<section class="filter-bar panel">
+  <div class="form-field">
+    <label for="busca">Buscar</label>
+
+    <!--
+      [(ngModel)]="texto" é two-way data binding:
+      1. se a variável texto muda no .ts, o input mostra o valor atualizado;
+      2. se o usuário digita no input, a variável texto muda automaticamente.
+
+      (input)="emitirFiltros()" é event binding:
+      sempre que o usuário digita, o componente emite os filtros para a página pai.
+    -->
+    <input
+      id="busca"
+      type="text"
+      placeholder="Digite parte do título, descrição ou categoria"
+      [(ngModel)]="texto"
+      (input)="emitirFiltros()"
+    />
+  </div>
+
+  <div class="form-field">
+    <label for="categoria">Categoria</label>
+
+    <!--
+      Quando a categoria muda, o componente emite o novo conjunto de filtros.
+    -->
+    <select id="categoria" [(ngModel)]="categoria" (change)="emitirFiltros()">
+      <option>Todas</option>
+
+      <!--
+        @for é a sintaxe moderna do Angular para repetição.
+        Para cada item do array categorias, o Angular cria uma <option>.
+      -->
+      @for (item of categorias; track item) {
+        <option [value]="item">{{ item }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="form-field">
+    <label for="status">Status</label>
+    <select id="status" [(ngModel)]="status" (change)="emitirFiltros()">
+      @for (item of statusOptions; track item) {
+        <option [value]="item">{{ item }}</option>
+      }
+    </select>
+  </div>
+
+  <!--
+    Clique no botão chama o método limpar() no arquivo .ts.
+  -->
+  <button type="button" class="btn secondary" (click)="limpar()">Limpar</button>
+</section>

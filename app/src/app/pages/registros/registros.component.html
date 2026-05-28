@@ -1,0 +1,73 @@
+<!--
+  agendamentos.component.html
+  ---------------------------------------------------------------------------
+  Tela de agendamentos da barbearia.
+
+  CRUD significa:
+  - Create: cadastrar novo agendamento;
+  - Read: listar/visualizar agendamentos;
+  - Update: editar agendamento;
+  - Delete: excluir agendamento.
+
+  Esta página demonstra comunicação entre componente pai e componentes filhos.
+-->
+
+<section class="container registros-page">
+  <h1 class="page-title">Agendamentos</h1>
+  <p class="page-subtitle">
+    Gerencie os agendamentos da barbearia. Cadastre, visualize, edite e remova agendamentos de forma simples.
+  </p>
+
+  <app-item-form
+    [registroEdicao]="registroEdicao"
+    (salvar)="salvarRegistro($event)"
+    (cancelar)="cancelarEdicao()"
+  ></app-item-form>
+
+  <app-filter-bar
+    [categorias]="categorias"
+    (filtrosAlterados)="aplicarFiltros($event)"
+  ></app-filter-bar>
+
+  <!--
+    CARREGAMENTO/ERRO
+    -------------------------------------------------------------------------
+    Componente usado para mostrar feedback da tela.
+  -->
+  <app-loading-error [carregando]="carregando" [erro]="erro"></app-loading-error>
+
+  <!--
+    LISTA
+    -------------------------------------------------------------------------
+    A lista só aparece quando:
+    - não está carregando;
+    - existem registros para exibir.
+
+    Eventos emitidos pela lista:
+    - editar;
+    - excluir;
+    - alternarStatus.
+  -->
+  @if (!carregando && registros.length > 0) {
+    <app-item-list
+      [registros]="registros"
+      (editar)="editarRegistro($event)"
+      (excluir)="excluirRegistro($event)"
+      (alternarStatus)="alternarStatus($event)"
+    ></app-item-list>
+  }
+
+  <!--
+    ESTADO VAZIO
+    -------------------------------------------------------------------------
+    Aparece quando não há registros a mostrar. Pode acontecer porque:
+    - nenhum item foi cadastrado;
+    - os filtros não encontraram resultado.
+  -->
+  @if (!carregando && registros.length === 0) {
+    <app-empty-state
+      titulo="Nenhum registro encontrado"
+      mensagem="Altere os filtros ou cadastre um novo registro."
+    ></app-empty-state>
+  }
+</section>

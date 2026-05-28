@@ -1,0 +1,73 @@
+<!--
+  item-form.component.html
+  ---------------------------------------------------------------------------
+  Formulário de cadastro/edição de agendamentos da barbearia.
+-->
+
+<form class="panel form" (ngSubmit)="enviar()">
+  <div class="form-header">
+    <div>
+      <h2>{{ registroEdicao ? 'Editar agendamento' : 'Novo agendamento' }}</h2>
+      <p>Preencha os dados para agendar um serviço na barbearia.</p>
+    </div>
+
+    @if (registroEdicao) {
+      <span class="badge">ID {{ registroEdicao.id }}</span>
+    }
+  </div>
+
+  <div class="grid">
+    <div class="form-field">
+      <label for="cliente">Cliente *</label>
+      <input id="cliente" name="cliente" type="text" [(ngModel)]="form.cliente" placeholder="Nome do cliente" />
+    </div>
+
+    <div class="form-field">
+      <label for="telefone">Telefone *</label>
+      <input id="telefone" name="telefone" type="tel" [(ngModel)]="form.telefone" placeholder="(11) 98765-4321" />
+    </div>
+
+    <div class="form-field">
+      <label for="servico">Serviço</label>
+      <select id="servico" name="servico" [(ngModel)]="form.servico">
+        @for (item of servicoOptions; track item) {
+          <option [value]="item">{{ item }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="profissional">Profissional</label>
+      <input id="profissional" name="profissional" type="text" [(ngModel)]="form.profissional" placeholder="Nome do barbeiro" />
+    </div>
+
+    <div class="form-field">
+      <label for="dataHora">Data e Hora</label>
+      <input id="dataHora" name="dataHora" type="datetime-local" [(ngModel)]="form.dataHora" />
+    </div>
+
+    <div class="form-field">
+      <label for="status">Status</label>
+      <select id="status" name="status" [(ngModel)]="form.status">
+        @for (item of statusOptions; track item) {
+          <option [value]="item">{{ item }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="valor">Valor (R$)</label>
+      <input id="valor" name="valor" type="number" min="0" step="0.01" [(ngModel)]="form.valor" />
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" type="submit">
+      {{ registroEdicao ? 'Salvar alterações' : 'Agendar' }}
+    </button>
+
+    @if (registroEdicao) {
+      <button class="btn secondary" type="button" (click)="cancelarEdicao()">Cancelar edição</button>
+    }
+  </div>
+</form>

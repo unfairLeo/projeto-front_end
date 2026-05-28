@@ -1,0 +1,83 @@
+.item-main,
+.actions,
+.meta {
+  display: flex;
+  gap: 12px;
+}
+
+.item-main {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+h3,
+p,
+dl,
+dd {
+  margin: 0;
+}
+
+.item-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: var(--surface-soft);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.item-card h3 {
+  margin-bottom: 6px;
+}
+
+.item-card p,
+dt {
+  color: var(--muted);
+}
+
+.meta {
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.meta div {
+  min-width: 140px;
+}
+
+dt {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+dd {
+  margin-top: 4px;
+}
+
+.actions {
+  flex-wrap: wrap;
+}
+
+.status-pendente {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.status-confirmado {
+  background: #eef4ff;
+  color: #1d4ed8;
+}
+
+.status-concluido {
+  background: #ecfdf3;
+  color: #047857;
+}
+
+.status-cancelado {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+@media (max-width: 720px) {
+  .item-main {
+    flex-direction: column;
+  }
+}
