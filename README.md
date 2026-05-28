@@ -32,4 +32,4 @@ Nesta sprint, o projeto recebeu as seguintes atualizações:
 1. Abra a pasta `app` no cmd.
 2. Execute `npm install`.
 3. Execute `npm run start`.
-4. Acesse `http://localhost:4200`.
+4. Acesse o local que aplicação que o codigo vai dar.
