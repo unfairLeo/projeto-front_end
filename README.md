@@ -27,9 +27,9 @@ Nesta sprint, o projeto recebeu as seguintes atualizações:
 - `app/src/app/components/item-list/item-list.component.ts`
 - `app/src/app/components/filter-bar/filter-bar.component.ts`
 
-### Como iniciar o projeto
+### Como iniciar o projeto - SUGERIDO PELA EQUIPE FUNF JUNGS
 
-1. Abra a pasta `app`.
+1. Abra a pasta `app` no cmd.
 2. Execute `npm install`.
 3. Execute `npm run start`.
 4. Acesse `http://localhost:4200`.
